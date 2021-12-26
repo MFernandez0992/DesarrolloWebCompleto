@@ -1,0 +1,156 @@
+/* Custom Properties - se declaran dentro de :root y se pueden utilizar en cualquier parte del Css como si fuesen variables */
+:root{
+    /* Guardo en variables los colores del sitio */
+    --blanco: #fff;
+    --oscuro: #212121;
+    --primario: #ffc107;
+    --secundario: #0097A7;
+    --gris: #757575;
+}
+
+/* Globales */
+html{
+    font-size: 62.5%;
+}
+
+body{
+    font-size: 16px; /* 1rem = 10px */
+    font-family: 'Krub', sans-serif;
+    box-sizing: border-box; /* Hack para Box Model */
+    background-image: linear-gradient(to top, #dfe9f3 0%, var(--blanco) 100%);
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+.contenedor{
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+.boton{
+    background-color: var(--secundario);
+    color: var(--blanco);
+    padding: 1rem 3rem;
+    margin-top: 3rem;
+    font-size: 2rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    border-radius: .5rem;
+    width: 90%;
+    text-align: center;
+}
+
+@media (min-width: 480px) {
+    .boton{
+        width: auto;
+    }
+}
+
+.sombra{
+    box-shadow: 0px 5px 15px 0px rgba(112,112,112,0.48);
+    background-color: var(--blanco);
+    padding: 2rem;
+    border-radius: 1rem;
+}
+/* Tipografía */
+h1{
+    font-size: 3.8rem;
+}
+
+h2{
+    font-size: 2.8rem;
+}
+
+h3{
+    font-size: 1.8rem;
+}
+
+h1, h2, h3{
+    text-align: center;
+}
+
+h1 span{
+    font-size: 2rem;
+}
+
+/* Navegación Principal */
+.nav-bg{
+    background-color: var(--secundario);
+}
+
+.navegacion-principal{
+    display: flex;
+    /* Fue diseñado como un modelo udimensional para crear layouts
+    
+    En Flexbox solo puedes colocar y distribuir tus elemento en una dirección fila(row) o columna(column)
+    
+    Row es aplicado por defecto al difinir display:flex;*/
+    
+    flex-direction: column;
+    align-items: center;
+}
+
+.navegacion-principal a{
+    padding: 1rem;
+    text-decoration: none;
+    color: var(--blanco);
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.navegacion-principal a:hover{
+    background-color: var(--primario);
+}
+
+.titulo span{
+    font-size: 2rem;
+}
+
+@media (min-width: 480px) {
+    .navegacion-principal{
+        flex-direction: row;
+        justify-content: space-between; /* justify-content funciona en las row */
+        
+        /* Cuando utilizo flex-direction: column no funciona justify-content, sino align-items. 
+            flex-direction: column;
+            align-items: center;
+         */
+    }
+}
+
+/* Hero */
+.hero{
+    background-image: url(../img/hero.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 45rem;
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.contenido-hero{
+    position: absolute;
+    background-color: rgba(0, 0, 0, .5); /* Anterior */
+    background-color: rgb(0 0 0 / 50%); /* Nueva */
+    width: 100%;
+    height: 100%;
+
+    /* Alineación del texto en el hero */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenido-hero h2,
+.contenido-hero p{
+    color: var(--blanco);
+}
+
+.contenido-hero .ubicacion{
+    display: flex;
+    align-items: flex-end;
+}
