@@ -154,3 +154,18 @@ h1 span{
     display: flex;
     align-items: flex-end;
 }
+
+/* Servicios */
+/* Utilizaré la grilla de Grid, divide el área en filas o columnas, en grid-template-columns/rows coloco el tamaño de cada fila/columna, en px, % o fr(fracción, en este caso cada ficha de servicio ocupará una fracción, por lo que el espacio se dividirá en 3 */
+@media (min-width: 768px) {
+    .servicios{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 1rem; /* Utilizo column-gap para establecer la separación que tendra cada área del grid entre sí */
+    }     
+}
+
+/* Cuándo utilizar CSS Grid y cuándo utilizar Flexbox */
+/* Grid - Para definir el Layout de tu sitio web, como pueden ser las columnas o contenedores de elementos */
+
+/* Flexbox -  Si quiero distribuir elementos dentro de un contenedor */
